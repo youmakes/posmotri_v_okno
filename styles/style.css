@@ -251,7 +251,7 @@ input[type="checkbox"]:checked + span {
 	width: 17px;
 	height: 17px;
 	vertical-align: middle;
-	border: 1px solid black;
 	outline-offset: 1px;
 	outline: 1px solid white;
+	margin-right: 2px;
 } /* выбранный */
