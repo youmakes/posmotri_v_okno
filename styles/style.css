@@ -44,7 +44,7 @@ ol {
 	flex-direction: row;
 	align-items: end;
 	gap: 30px;
-	padding: 140px 30px 30px 30px;
+	padding: 130px 30px 30px 30px;
 	/* background-color: red; */
 }
 
@@ -99,6 +99,7 @@ h1 {
 }
 
 .search-form__fieldset {
+	align-self: center;
 	flex: 1;
 }
 
@@ -114,7 +115,7 @@ h1 {
 	/* background-color: green; */
 	width: 711px;
 	height: 386px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 .result__video {
@@ -179,7 +180,9 @@ h1 {
 	width: fit-content;
 	gap: 5px;
  }
-
+ .search-form__label-text {
+	
+ }
  .search-form__textfield, .search-form__checkbox, .button {
 	cursor: pointer;
  }
@@ -229,7 +232,26 @@ border: 1px solid #FFF;
 	width: 99%;
  }
 
- .search-form__pseudo-checkbox {
-
-	
+ .search-form__checkbox-list {
+	display: flex;
+	gap: 15px;
  }
+
+ .search-form__pseudo-checkbox {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	vertical-align: middle;
+	border: 1px solid white;
+ }
+
+input[type="checkbox"]:checked + span {
+	background-color: white;
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	vertical-align: middle;
+	border: 1px solid black;
+	outline-offset: 1px;
+	outline: 1px solid white;
+} /* выбранный */
