@@ -1,16 +1,9 @@
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-html {
-	block-size: 100%;
-}
+/* Стили для родительского блока */
 
 .page {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	inline-size: 1200px;
 	block-size: 100%;
 	margin: auto;
@@ -20,23 +13,77 @@ html {
 	background-color: #1b1919;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-	margin: 0;
-	padding: 0;
+/* Стили для дочернего блока */
+
+.content {
+	display: flex;
+	inline-size: 1140px;
+	justify-content: center;
+	align-items: end;
+	gap: 30px;
 }
 
-ul,
-ol {
-	list-style: none;
+/* Секция result */
+
+.result {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.result__video-container {
+	position: relative;
+	width: 711px;
+	height: 386px;
+}
+
+.result__video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 0;
+}
+
+.search-form {
+	display: flex;
+	align-items: end;
+	width: 711px;
+	gap: 40px;
+}
+
+.search-form__fieldset {
+	flex-basis: 212px;
+	border: none;
+	align-self: center;
+}
+
+.search-form__fieldset:nth-child(1) {
+	flex: 1;
+}
+
+.search-form__fieldset-title {
+	font-size: 18px;
+	font-weight: 400;
+	margin-bottom: 4px;
+}
+
+.search-form__textfield {
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	border-right: none;
+	border-left: none;
+	padding: 2px;
+	background-color: transparent;
+	appearance: none;
+	color: rgb(255 255 255 / 0.7);
+	font-size: 18px;
+	font-weight: 400;
+	width: 100%;
+}
+
+.search-form__checkbox-list {
+	display: flex;
+	gap: 15px;
 }
 
 .visually-hidden {
@@ -49,42 +96,45 @@ ol {
 	white-space: nowrap;
 }
 
-.content {
-	display: flex;
-	inline-size: 1200px;
-	flex-direction: row;
-	align-items: end;
-	gap: 30px;
-	padding: 0 30px;
+.search-form__pseudo-checkbox {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	vertical-align: middle;
+	border: 1px solid white;
 }
 
-.content__list {
-	position: relative;
-	flex-direction: column;
-	overflow: scroll;
-	overflow-x: hidden;
-	height: 298px;
-	margin-top: 26px;
-	scrollbar-width: none;
+.search-form__checkbox[type="checkbox"]:checked + .search-form__pseudo-checkbox {
+	background-color: white;
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	vertical-align: middle;
+	outline-offset: 1px;
+	outline: 1px solid white;
+	margin-right: 2px;
 }
 
-.content__list::-webkit-scrollbar {
-	width: 0;
-	background-color: rgb(0 0 0 / 0);
+.button {
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+	background-color: transparent;
+	height: 34px;
+	border: 1px solid #fff;
+	min-width: 194px;
 }
 
-.content__list-item {
-	padding-bottom: 30px;
-}
+/* Секция details */
 
 .content__details {
 	display: flex;
 	width: 100%;
 	flex-direction: column;
+	gap: 26px;
 }
 
-h1 {
-	color: #fff;
+.title {
 	font-family: Oswald, sans-serif;
 	font-size: 75px;
 	font-style: normal;
@@ -97,59 +147,39 @@ h1 {
 	color: #545050;
 }
 
+.content__list {
+	position: relative;
+	flex-direction: column;
+	overflow: scroll;
+	overflow-x: hidden;
+	height: 298px;
+	scrollbar-width: none;
+}
+
+.content__list-item {
+	padding-bottom: 30px;
+}
+
 .content__card-link {
 	display: block;
 	text-decoration: none;
 	margin: 2px;
 }
 
-.search-form {
-	display: flex;
-	align-items: end;
-	width: 711px;
-	gap: 40px;
-}
-
-.search-form__fieldset {
-	align-self: center;
-	flex: 1;
-}
-
-.search-form__fieldset-title {
-	color: #fff;
-	font-family: "Fira Sans Condensed", sans-serif;
-	font-size: 18px;
-	font-weight: 400;
-	margin-bottom: 5px;
-}
-
-.result__video-container {
-	position: relative;
-	width: 711px;
-	height: 386px;
-	margin-bottom: 20px;
-}
-
-.result__video {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: 0;
-}
-
 .content__video-card {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
-	align-items: start;
+}
+
+.content__video-card-description-container {
+	display: flex;
+	flex-direction: column;
 }
 
 .content__video-card-title {
-	display: inline;
-	color: #fff;
 	font-family: Oswald, sans-serif;
 	font-size: 30px;
-	font-style: normal;
 	font-weight: 700;
 	line-height: 100%; /* 30px */
 	text-transform: uppercase;
@@ -157,11 +187,7 @@ h1 {
 }
 
 .content__video-card-description {
-	display: inline;
-	color: #fff;
-	font-family: "Fira Sans Condensed", sans-serif;
 	font-size: 18px;
-	font-style: normal;
 	font-weight: 400;
 	line-height: 16.2px; /* 90% */
 }
@@ -169,85 +195,25 @@ h1 {
 .content__video-card-thumbnail {
 	width: 194px;
 	height: 103px;
+	object-fit: cover;
+	object-position: 0;
 }
 
-fieldset {
-	border: none;
+.more-button {
+	width: 99%;
 }
 
-.search-form__label {
-	width: fit-content;
-	gap: 5px;
+/* Прочее */
+
+::-webkit-scrollbar {
+	width: 0;
+	background-color: transparent;
 }
 
 .content__card-link,
 .search-form__label,
 .button {
 	cursor: url(/images/cursor.png), pointer;
-}
-
-.search-form__textfield {
-	border-top: 1px solid white;
-	border-bottom: 1px solid white;
-	border-right: none;
-	border-left: none;
-	padding: 2px;
-	outline: 0;
-	background-color: transparent;
-	appearance: none;
-	color: rgb(255 255 255 / 0.7);
-	font-family: "Fira Sans Condensed", sans-serif;
-	font-size: 18px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-	inline-size: 225px;
-}
-
-.button {
-	color: #fff;
-	text-align: center;
-	font-family: "Fira Sans Condensed", sans-serif;
-	font-size: 18px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
-	background-color: transparent;
-	display: flex;
-	width: 194px;
-	height: 34px;
-	justify-content: center;
-	align-items: center;
-	flex-shrink: 0;
-	border: 1px solid #fff;
-}
-
-.more-button {
-	width: 100%;
-}
-
-.search-form__checkbox-list {
-	display: flex;
-	gap: 15px;
-}
-
-.search-form__pseudo-checkbox {
-	display: inline-block;
-	width: 19px;
-	height: 19px;
-	vertical-align: middle;
-	border: 1px solid white;
-}
-
-input[type="checkbox"]:checked + span {
-	background-color: white;
-	display: inline-block;
-	width: 17px;
-	height: 17px;
-	vertical-align: middle;
-	outline-offset: 1px;
-	outline: 1px solid white;
-	margin-right: 2px;
 }
 
 /* Фокусы */
