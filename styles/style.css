@@ -41,7 +41,7 @@
 	inline-size: 100%;
 	block-size: 100%;
 	object-fit: cover;
-	object-position: 0;
+	object-position: center;
 }
 
 .search-form {
@@ -69,14 +69,14 @@
 }
 
 .search-form__textfield {
-	border-top: 1px solid white;
-	border-bottom: 1px solid white;
+	border-top: 1px solid currentColor;
+	border-bottom: 1px solid currentColor;
 	border-right: none;
 	border-left: none;
 	padding: 2px;
 	background-color: transparent;
 	appearance: none;
-	color: rgb(255 255 255 / 0.7);
+	color: white;
 	font-size: 18px;
 	font-weight: 400;
 	inline-size: 100%;
@@ -117,7 +117,7 @@
 	font-weight: 700;
 	background-color: transparent;
 	block-size: 34px;
-	border: 1px solid #fff;
+	border: 1px solid currentColor;
 	min-width: 194px;
 	margin-bottom: 2px;
 }
@@ -147,7 +147,7 @@
 .content__list {
 	position: relative;
 	overflow: auto;
-	overflow-x: hidden;
+	overflow-x: auto;
 	block-size: 300px;
 	display: flex;
 	flex-direction: column;
@@ -187,19 +187,22 @@
 	line-height: 100%; /* 30px */
 	text-transform: uppercase;
 	margin-bottom: 6px;
+	max-width: 200px;
+	text-overflow: ellipsis;
 }
 
 .content__video-card-description {
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 16.2px; /* 90% */
+	max-width: 200px;
 }
 
 .content__video-card-thumbnail {
 	inline-size: 194px;
 	block-size: 103px;
 	object-fit: cover;
-	object-position: 0;
+	object-position: center;
 }
 
 .more-button {
@@ -211,31 +214,21 @@
 
 /* Прочее */
 
-::-webkit-scrollbar {
-	inline-size: 0;
-	background-color: transparent;
-}
-
 .content__card-link,
 .search-form__label,
 .button {
-	cursor: url(/images/cursor.png), pointer;
+	cursor: pointer;
 }
 
 /* Фокусы */
 
+.search-form__label-text:hover,
 .button:hover {
 	text-decoration: underline;
 	text-underline-offset: 2px;
 }
 
-.content__video-card-description:hover {
-	text-decoration: underline;
-	text-underline-offset: 2px;
-	text-decoration-thickness: 1px;
-}
-
-.content__video-card-title:hover {
+.content__card-link:hover {
 	text-decoration: underline;
 	text-underline-offset: 4px;
 	text-decoration-thickness: 2px;
@@ -245,7 +238,7 @@
 	background-color: #545050;
 }
 
-.content__video-card:active {
+.content__card-link:active {
 	background-color: #545050;
 }
 
@@ -258,8 +251,7 @@
 
 .button:focus-visible,
 .content__card-link:focus-visible,
-.search-form__label:has(:focus-visible),
-.search-form__textfield:focus-visible {
+.search-form__label:has(:focus-visible) {
 	outline-offset: 1px;
 	outline: 1px solid white;
 }
