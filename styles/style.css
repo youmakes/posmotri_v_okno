@@ -56,7 +56,6 @@ ol {
 	align-items: end;
 	gap: 30px;
 	padding: 0 30px;
-	/* background-color: red; */
 }
 
 .content__list {
@@ -287,7 +286,7 @@ input[type="checkbox"]:checked + span {
 
 .button:focus-visible,
 .content__card-link:focus-visible,
-.search-form__label:focus-visible,
+.search-form__label:has(:focus-visible),
 .search-form__textfield:focus-visible {
 	outline-offset: 1px;
 	outline: 1px solid white;
