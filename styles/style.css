@@ -165,6 +165,10 @@
 	margin: 2px;
 }
 
+.content__card-link_current {
+	background-color: #545050;
+}
+
 .content__video-card {
 	display: flex;
 	justify-content: space-between;
