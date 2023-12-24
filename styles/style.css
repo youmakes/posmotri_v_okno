@@ -9,7 +9,8 @@ html {
 }
 
 .page {
-	display: block;
+	display: flex;
+	align-items: center;
 	inline-size: 1200px;
 	block-size: 100%;
 	margin: auto;
@@ -54,7 +55,7 @@ ol {
 	flex-direction: row;
 	align-items: end;
 	gap: 30px;
-	padding: 133px 30px 0;
+	padding: 0 30px;
 	/* background-color: red; */
 }
 
