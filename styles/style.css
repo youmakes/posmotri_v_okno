@@ -176,12 +176,12 @@
 
 .content__video-card {
 	display: flex;
-	justify-content: space-between;
 	flex-direction: row;
 }
 
 .content__video-card-description-container {
 	display: flex;
+	flex: 1;
 	flex-direction: column;
 }
 
