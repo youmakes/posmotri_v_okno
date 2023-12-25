@@ -98,17 +98,20 @@
 }
 
 .search-form__pseudo-checkbox {
-	display: block;
+	align-self: center;
+	justify-self: center;
 	inline-size: 19px;
 	block-size: 19px;
-	vertical-align: middle;
+	padding: 1px;
 	border: 1px solid white;
 }
 
-.search-form__checkbox[type="checkbox"]:checked + .search-form__pseudo-checkbox {
-	background-color: white;
-	border: 1px solid black;
-	outline: 1px solid white;
+.search-form__checkbox[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
+	content: "";
+	display: block;
+	inline-size: 100%;
+	block-size: 100%;
+	background-color: #fff;
 }
 
 .search-form__label {
@@ -229,7 +232,11 @@
 
 /* Фокусы */
 
-.search-form__label:has(.search-form__label-text):hover,
+.search-form__label:hover .search-form__label-text { 
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
 .button:hover {
 	text-decoration: underline;
 	text-underline-offset: 2px;
