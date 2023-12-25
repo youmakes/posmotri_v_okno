@@ -98,7 +98,7 @@
 }
 
 .search-form__pseudo-checkbox {
-	display: inline-block;
+	display: block;
 	inline-size: 19px;
 	block-size: 19px;
 	vertical-align: middle;
@@ -109,6 +109,11 @@
 	background-color: white;
 	border: 1px solid black;
 	outline: 1px solid white;
+}
+
+.search-form__label {
+	display: flex;
+	gap: 5px;
 }
 
 .button {
@@ -186,9 +191,11 @@
 	font-weight: 700;
 	line-height: 100%; /* 30px */
 	text-transform: uppercase;
-	margin-bottom: 6px;
+	padding-bottom: 6px;
 	max-width: 200px;
 	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .content__video-card-description {
@@ -222,7 +229,7 @@
 
 /* Фокусы */
 
-.search-form__label-text:hover,
+.search-form__label:has(.search-form__label-text):hover,
 .button:hover {
 	text-decoration: underline;
 	text-underline-offset: 2px;
